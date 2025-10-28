@@ -1,0 +1,363 @@
+{
+  "api_version": "1.0",
+  "project": {
+    "name": "Chainway C72 RFID Reader SDK",
+    "version": "20250209",
+    "description": "Complete API documentation for Chainway C72 Handheld RFID Reader",
+    "manufacturer": "Chainway Technology",
+    "documentation_generated": "2024-11-25T17:26:07+08:00",
+    "repository": "https://github.com/agungferdi/c72_sdk"
+  },
+  "packages": [
+    {
+      "name": "com.rscja",
+      "description": "Root package containing core device information",
+      "classes": ["CWDeviceInfo"]
+    },
+    {
+      "name": "com.rscja.barcode",
+      "description": "Barcode scanning and decoding operations",
+      "classes": [
+        "Barcode1D",
+        "Barcode2D",
+        "BarcodeDecoder",
+        "BarcodeFactory",
+        "BarcodeUtility",
+        "BarcodeSymbolUtility",
+        "ConstantUtil",
+        "Barcode2DSHardwareInfo",
+        "IBarcode2DSHardwareInfo"
+      ],
+      "interfaces": [
+        "BarcodeDecoder.DecodeCallback",
+        "BarcodeDecoder.IBarcodeImageCallback"
+      ]
+    },
+    {
+      "name": "com.rscja.custom",
+      "description": "Custom RFID protocol implementations",
+      "classes": [
+        "M775Authenticate",
+        "RFIDWithUHFJieCe",
+        "UHFCSYX",
+        "UHFCSYXForURx",
+        "UHFTamperAPI",
+        "UHFTemperatureSensors",
+        "UHFTemperatureTagsAPI",
+        "UHFUartFoxconn",
+        "UHFTemperatureTag",
+        "UHFTemperatureTagsAPI",
+        "UHFXSAPI"
+      ],
+      "features": [
+        "M775 authentication",
+        "UHF JieCe protocol",
+        "CSYX protocol support",
+        "URx network support",
+        "Tamper detection",
+        "Temperature sensing",
+        "Bluetooth LE tags (BLEN51, BLEN52)"
+      ]
+    },
+    {
+      "name": "com.rscja.deviceapi",
+      "description": "Core device API interfaces and implementations",
+      "subcategories": {
+        "rfid": {
+          "description": "RFID protocol implementations",
+          "interfaces": [
+            "IUHF",
+            "IUHFA4",
+            "IUHFA8",
+            "IRFIDWithUHFA4",
+            "IRFIDWithUHFA8",
+            "IRFIDWithUHFA4NetWork",
+            "IRFIDWithUHFA8NetWork",
+            "IRFIDWithUHFA4RS232",
+            "IRFIDWithUHFA8RS232",
+            "IRFIDWithUHFA4Uart",
+            "IRFIDWithUHFA8Uart",
+            "IRFIDWithUHFRLM",
+            "IRFIDWithUHFUSB",
+            "IRFIDWithUHFUrxNetwork",
+            "IRFIDWithUHFUrxUart",
+            "IRFIDWithUHFUrxUsbToUart",
+            "IRFIDWithISO14443A",
+            "IRFIDWithISO14443B",
+            "IRFIDWithISO15693",
+            "IRFIDWithISO14443A4CPU",
+            "IRFIDWithLF"
+          ]
+        },
+        "barcode": {
+          "description": "Barcode scanning interfaces",
+          "interfaces": [
+            "IBarcode1D",
+            "IBarcode2D",
+            "IBarcodeUtility",
+            "IBarcodeSymbolUtility",
+            "IBarcodePhoto",
+            "IBarcodePictureCallback",
+            "IBarcodeVideoCallback"
+          ]
+        },
+        "hf_protocols": {
+          "description": "High Frequency protocols",
+          "interfaces": [
+            "IHF14443A",
+            "IHF14443B",
+            "IHF15693"
+          ]
+        },
+        "hardware_control": {
+          "description": "Hardware control interfaces",
+          "interfaces": [
+            "ILedLight",
+            "IScanerLedLight",
+            "IInfrared",
+            "IPrinter",
+            "IPSAM"
+          ]
+        },
+        "connectivity": {
+          "description": "Connectivity interfaces",
+          "interfaces": [
+            "IBluetoothReader",
+            "IBleDevice",
+            "IBluetoothData",
+            "IUhfBle"
+          ]
+        },
+        "callbacks": {
+          "description": "Callback and listener interfaces",
+          "interfaces": [
+            "IUHFInventoryCallback",
+            "IUHFLocationCallback",
+            "ITagLocationCallback",
+            "ITagLocate",
+            "ConnectionStatusCallback",
+            "IConnectionStatusChangedListener",
+            "OnLowBatteryListener",
+            "KeyEventCallback",
+            "ScanBTCallback"
+          ]
+        },
+        "biometric": {
+          "description": "Fingerprint and biometric interfaces",
+          "interfaces": [
+            "IFingerprint",
+            "IFingerprintWithFIPS",
+            "IFingerprintWithMorpho",
+            "IFingerprintWithZAZ",
+            "IFingerprintSM206B",
+            "IUsbFingerprint"
+          ]
+        },
+        "other": {
+          "description": "Other utility interfaces",
+          "interfaces": [
+            "IReader",
+            "IModule",
+            "IHandheldRFID",
+            "IRFIDBase",
+            "IUpgradeProgress"
+          ]
+        }
+      }
+    },
+    {
+      "name": "com.rscja.deviceapi.entity",
+      "description": "Data entity classes for information transfer"
+    },
+    {
+      "name": "com.rscja.deviceapi.enums",
+      "description": "Enumeration definitions for states and configurations"
+    },
+    {
+      "name": "com.rscja.deviceapi.exception",
+      "description": "Custom exception definitions"
+    },
+    {
+      "name": "com.rscja.scanner",
+      "description": "Scanner operation interfaces",
+      "interfaces": [
+        "IScanner",
+        "OnUhfWorkStateListener"
+      ]
+    },
+    {
+      "name": "com.rscja.scanner.led",
+      "description": "Scanner LED control",
+      "classes": [
+        "ScanLed",
+        "ScanLedManage"
+      ]
+    },
+    {
+      "name": "com.rscja.scanner.utility",
+      "description": "Scanner utilities",
+      "classes": [
+        "ScannerUtility"
+      ]
+    },
+    {
+      "name": "com.rscja.system",
+      "description": "System operations and configuration",
+      "classes": [
+        "ISystemInterfaces",
+        "SystemInterfacesFactory"
+      ]
+    },
+    {
+      "name": "com.rscja.utility",
+      "description": "General utility functions",
+      "utilities": [
+        "BatteryUtils",
+        "FileUtility",
+        "FingerprintPictureUtility",
+        "NetUtils",
+        "NumberTool",
+        "StringUtility",
+        "UhfUtils"
+      ]
+    },
+    {
+      "name": "com.rscja.team.mtk",
+      "description": "MediaTek platform implementation",
+      "platform": "MTK",
+      "features": [
+        "Device configuration",
+        "Barcode scanning",
+        "RFID operations",
+        "Scanner LED management",
+        "System property management"
+      ]
+    },
+    {
+      "name": "com.rscja.team.qcom",
+      "description": "Qualcomm platform implementation",
+      "platform": "QCom",
+      "features": [
+        "Extended device configuration",
+        "Advanced barcode symbol support",
+        "Comprehensive UHF protocol parsing",
+        "BLE and UART enhancements",
+        "Network socket support",
+        "HTTP utilities",
+        "Multiple scanner LED configurations",
+        "Enhanced security and diagnostics"
+      ],
+      "supported_devices": [
+        "C60_6765_11",
+        "C60_qcm2150_10",
+        "C61_smd450_90",
+        "C66_smd450_90",
+        "C66m_sm6115_10",
+        "MC50_4350_12",
+        "P80_8786_130",
+        "P80_8953_90"
+      ]
+    }
+  ],
+  "key_features": {
+    "rfid": {
+      "description": "RFID capabilities",
+      "features": [
+        "Ultra High Frequency (UHF) - A4, A8, RLM",
+        "High Frequency (HF) - ISO14443A, ISO14443B, ISO15693",
+        "Temperature sensing with BLE connectivity",
+        "M775 authentication protocol",
+        "Custom protocols - JieCe, CSYX, XS",
+        "Multiple communication interfaces - USB, RS232, UART, Bluetooth, Network"
+      ]
+    },
+    "barcode": {
+      "description": "Barcode scanning capabilities",
+      "features": [
+        "1D barcode scanning",
+        "2D barcode scanning",
+        "Hardware-accelerated decoding",
+        "Symbol configuration",
+        "Image processing callbacks",
+        "Video processing callbacks",
+        "Keyboard emulation"
+      ]
+    },
+    "hardware_control": {
+      "description": "Hardware control capabilities",
+      "features": [
+        "LED light control",
+        "Scanner LED patterns",
+        "Infrared control",
+        "Thermal printer interface",
+        "PSAM card support"
+      ]
+    },
+    "biometric": {
+      "description": "Biometric features",
+      "features": [
+        "Fingerprint scanning",
+        "FIPS-certified fingerprints",
+        "Morpho fingerprint scanners",
+        "SM206B fingerprints",
+        "ZAZ fingerprints",
+        "USB fingerprint devices"
+      ]
+    },
+    "connectivity": {
+      "description": "Connectivity options",
+      "features": [
+        "Bluetooth/BLE wireless",
+        "Network TCP/IP",
+        "Serial RS232",
+        "UART communication",
+        "USB direct connectivity"
+      ]
+    },
+    "system": {
+      "description": "System integration",
+      "features": [
+        "Battery management",
+        "Low battery notifications",
+        "Firmware upgrade tracking",
+        "Hardware button events",
+        "Connection status monitoring",
+        "Platform-specific configuration"
+      ]
+    }
+  },
+  "main_entry_points": {
+    "device_info": "com.rscja.CWDeviceInfo",
+    "system_factory": "com.rscja.system.SystemInterfacesFactory",
+    "barcode_factory": "com.rscja.barcode.BarcodeFactory"
+  },
+  "common_callbacks": {
+    "barcode_decode": "BarcodeDecoder.DecodeCallback",
+    "rfid_inventory": "IUHFInventoryCallback",
+    "connection_status": "ConnectionStatusCallback",
+    "battery_warning": "OnLowBatteryListener"
+  },
+  "documentation_urls": {
+    "home": "/",
+    "overview": "/overview-summary.html",
+    "all_classes": "/allclasses-noframe.html",
+    "package_tree": "/overview-tree.html",
+    "deprecations": "/deprecated-list.html",
+    "index": "/index-files/index-1.html",
+    "sitemap": "/sitemap.xml",
+    "ai_index": "/AI_DOCUMENTATION_INDEX.md"
+  },
+  "platforms": [
+    {
+      "name": "MediaTek (MTK)",
+      "packages": "com.rscja.team.mtk",
+      "status": "Stable"
+    },
+    {
+      "name": "Qualcomm (QCom)",
+      "packages": "com.rscja.team.qcom",
+      "status": "Enhanced",
+      "notes": "Extended features and device support"
+    }
+  ]
+}
